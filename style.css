@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    border: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #0b456b, #021c37);
+    overflow: hidden;
+    user-select: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.clock {
+    height: 50rem;
+    width: 50rem;
+    position: relative;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #05263c, #000d1a);
+}
+
+.clock::before {
+    content: "";
+    height: 52.5rem;
+    width: 52.5rem;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(to right, #00d9ff, #ee00ff);
+    box-shadow: 0 0 1.5rem 1.5rem rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+.number {
+    transform: rotate(calc(30deg * var(--n)));
+    position: absolute;
+    text-align: center;
+    inset: 2rem;
+    font-size: 4rem;
+    color: #00d9ff;
+    text-shadow: 0 0 1.2rem ;
+}
+
+.number b {
+    transform: rotate(calc(-30deg * var(--n)));
+    display: inline-block;
+}
+
+.dot {
+    position: absolute;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: #ee00ff;
+    border: 6px solid #00d9ff;
+    border-radius: 50%;
+}
+
+.hour-hand, .min-hand, .sec-hand {
+    --rotate: 0;
+    width: 1.2rem;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50% -50%) ;
+    transform-origin: bottom;
+    border-radius: 3rem 3rem 0 0;
+    background: linear-gradient(to top, #00d9ff, #ee00ff);
+}
+
+.hour-hand {
+    height: 13rem;
+    background: linear-gradient(#00d9ff, #ee00ff);
+}
+
+.min-hand {
+    height: 19rem;
+}
+
+.sec-hand {
+    height: 21rem;
+    width: 0.6rem;
+}
+
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 56%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    html {
+        font-size: 30%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
